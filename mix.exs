@@ -27,6 +27,10 @@ defmodule GenerateTestData4s3.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      ex_aws:    "~> 0.4.10",
+      poison:    "~> 1.2",
+      httpoison: "~> 0.7" 
+    ]
   end
 end
