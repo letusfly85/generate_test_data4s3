@@ -29,8 +29,8 @@ defmodule GenerateTestData4s3.Mixfile do
   defp deps do
     [
      {:mix_test_watch, "~> 0.2", only: [:dev, :test]},
-     #{:ex_aws,    "~> 0.4.10"},
-     {:ex_aws,  git: "git://github.com/letusfly85/ex_aws.git", branch: "dev_s3rver"},
+     {:ex_aws,    "~> 0.4.10"},
+     #{:ex_aws,  git: "git://github.com/letusfly85/ex_aws.git", branch: "dev_s3rver"},
      {:poison,    "~> 1.2"},
      {:httpoison, "~> 0.7"} 
     ]
