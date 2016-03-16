@@ -13,6 +13,3 @@ before_install:
 script:
   - mix test
 
-addons:
-  hosts:
-    - fuga.localhost
