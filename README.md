@@ -18,3 +18,16 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
           [applications: [:generate_test_data4s3]]
         end
 
+# (Devs)
+
+## Run s3rver and kinesalite
+
+```bash
+mkdir -p data/s3rver
+mkdir -p data/kinesalite
+
+sudo hostname=${bucket_name}.localhost
+
+s3rver -d data/s3rver &
+node kinesalite &
+```
