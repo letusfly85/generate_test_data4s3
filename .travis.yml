@@ -9,7 +9,10 @@ before_install:
 - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
 - sudo apt-get update
 - sudo apt-get install -y esl-erlang
-- sudo apt-get install -y elixir
+- git clone https://github.com/elixir-lang/elixir.git && cd elixir
+- git checkout v1.2
+- make clean test
+- sudo make install
 - docker run -d --name=s3rver -p 127.0.0.1:4568:4568 -t triplew/s3rver
 
 script:
