@@ -13,6 +13,8 @@ before_install:
 - docker run -d --name=s3rver -p 127.0.0.1:4568:4568 -t triplew/s3rver
 
 script:
+  - which elixir
+  - echo $PATH
   - mix local.hex --force
   - mix test
 
