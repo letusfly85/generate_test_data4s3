@@ -16,7 +16,7 @@ script:
   - which elixir
   - echo $PATH
   - ls -la /usr/local/lib/elixir
-  - export PATH=$PATH:/usr/local/lib/elixir/bin
+  - export PATH=/usr/local/lib/elixir/bin:$PATH:/usr/local/lib/elixir/bin
   - export ERL_LIBS=/usr/local/lib/elixir/lib 
   - mix local.hex --force
   - mix test
