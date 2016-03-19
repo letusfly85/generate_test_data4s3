@@ -15,6 +15,9 @@ before_install:
 script:
   - which elixir
   - echo $PATH
+  - ls -la /usr/local/bin/elixir
+  - export PATH=/usr/local/bin:$PATH
+  - export ERL_LIBS=/usr/local/elixir/lib 
   - mix local.hex --force
   - mix test
 
