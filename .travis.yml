@@ -6,24 +6,19 @@ services:
   - docker
 
 before_install:
-  - sudo apt-get update && sudo apt-get install build-essential 
-  - wget http://s3.amazonaws.com/downloads.basho.com/erlang/otp_src_R16B02-basho8.tar.gz
-  - tar zxf otp_src_R16B02-basho8.tar.gz
-  - cd OTP_R16B02_basho8
-  - ./otp_build autoconf
-  - ./configure && make && sudo make install
-  - sudo apt-get update
-  - sudo apt-get install -y elixir
+  - sudo apt-get update && sudo apt-get install build-essential
+  - wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb 
+  - sudo apt-get update && sudo apt-get install esl-erlang
+  - git clone https://github.com/elixir-lang/elixir.git
+  - cd elixir
+  - make clean test
   - docker run -d --name=s3rver -p 127.0.0.1:4568:4568 -t triplew/s3rver
 
 script:
   - which elixir
   - echo $PATH
-  - ls -la /usr/local/lib/elixir
-  - export PATH=/usr/local/lib/elixir/bin:$PATH:/usr/local/lib/elixir/bin
-  - export ERL_LIBS=/usr/local/lib/elixir/lib 
-  - ERL_LIBS=/usr/local/lib/elixir/lib mix local.hex --force
-  - ERL_LIBS=/usr/local/lib/elixir/lib mix test
+  - mix local.hex --force
+  - mix test
 
 addons:
   hosts:
