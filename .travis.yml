@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get update && sudo apt-get install build-essential 
   - wget http://s3.amazonaws.com/downloads.basho.com/erlang/otp_src_R16B02-basho8.tar.gz
   - tar zxf otp_src_R16B02-basho8.tar.gz
-  - cd TP_R16B02_basho8
+  - cd OTP_R16B02_basho8
   - ./otp_build autoconf
   - ./configure && make && sudo make install
   - sudo apt-get update
